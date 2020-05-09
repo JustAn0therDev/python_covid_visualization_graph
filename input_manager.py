@@ -1,5 +1,3 @@
-from typing import Type
-
 class InputManager:
     chosen_country_iso_code: str = ""
     interval_in_days: int = 0

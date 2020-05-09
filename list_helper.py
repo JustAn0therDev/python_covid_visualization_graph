@@ -1,3 +1,4 @@
+import covid_csv_index_constants
 class ListHelper:
 
     @staticmethod
@@ -5,8 +6,9 @@ class ListHelper:
         if (type(covid_cases_filtered_by_country) is not None and len(covid_cases_filtered_by_country) > 0):
             for row in covid_cases_filtered_by_country:
                 try:
-                    list_of_dates.append(row[2][5:])
-                    list_of_cases.append(row[3])
+                    #[5:] -> Substring to get only 'month-day' instead of the full date format
+                    list_of_dates.append(row[covid_csv_index_constants.LIST_DATE_INDEX][5:])
+                    list_of_cases.append(row[covid_csv_index_constants.LIST_TOTALCASES_INDEX])
                 except Exception as exception_message:
                     print(f'Failed on converting the current row. Error: {str(exception_message)}')
                     pass
