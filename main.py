@@ -12,7 +12,7 @@ uiManager = UiManager()
 inputManager.prompt_user_for_country_iso_code()
 inputManager.prompt_user_for_interval_in_days()
 
-covid_cases_filtered_by_country = ListHelper.filter_by_country(csvManager.ALL_COVID_CASES_IN_CSV, inputManager.chosen_country_iso_code)
+covid_cases_filtered_by_country = ListHelper.filter_by_country_iso_code(csvManager.ALL_COVID_CASES_IN_CSV, inputManager.chosen_country_iso_code)
 
 ListHelper.format_lists_from_all_covid_cases_list(covid_cases_filtered_by_country, list_of_dates, list_of_cases)
 

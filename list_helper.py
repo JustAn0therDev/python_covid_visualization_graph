@@ -12,11 +12,11 @@ class ListHelper:
                     pass
 
     @staticmethod
-    def filter_by_country(list_of_covid_cases_to_filter: list, country: str) -> list:
+    def filter_by_country_iso_code(list_of_covid_cases_to_filter: list, country_iso_code: str) -> list:
         filtered_list = []
         if (list_of_covid_cases_to_filter is not None and len(list_of_covid_cases_to_filter) > 0):
             for row in list_of_covid_cases_to_filter:
-                if row[0] == country.upper():
+                if row[0] == country_iso_code.upper():
                     filtered_list.append(row)
             return filtered_list
 
