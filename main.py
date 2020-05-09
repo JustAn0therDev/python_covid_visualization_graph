@@ -1,25 +1,25 @@
-import csv
-import matplotlib.pyplot as plt
-from filter_functions import filter_by_country, get_cases_by_number_of_days
-from covid_cases import get_all_covid_cases_from_csv
+from list_helper import ListHelper
+from csv_manager import CsvManager
+from input_manager import InputManager
+from ui_manager import UiManager
 
 list_of_dates = []
 list_of_cases = []
 
-chosen_country_iso_code = input("Please write the iso_code for the country of preference (e.g: BRA, USA, ITA): ")
-covid_cases_filtered_by_country = filter_by_country(get_all_covid_cases_from_csv(), chosen_country_iso_code)
-for row in covid_cases_filtered_by_country:
-    try:
-        list_of_dates.append(row[2][5:])
-        list_of_cases.append(row[3])
-    except Exception as exception_message:
-        print(f"Couldn't convert row because of the following error: {exception_message}")
+inputManager = InputManager()
+csvManager = CsvManager()
+uiManager = UiManager()
 
-number_of_days_to_show_data = int(input("Please input the number of days to between cases (only numbers): "))
-list_of_dates = get_cases_by_number_of_days(list_of_dates, number_of_days_to_show_data)
-list_of_cases = get_cases_by_number_of_days(list_of_cases, number_of_days_to_show_data)
+inputManager.prompt_user_for_country_iso_code()
+covid_cases_filtered_by_country = ListHelper.filter_by_country(csvManager.ALL_COVID_CASES_IN_CSV, inputManager.chosen_country_iso_code)
 
-plt.plot(list_of_dates, list_of_cases, "#FF0000")
-plt.ylabel("Total de casos confirmados (testes, recuperados, mortos)")
-plt.xlabel(f"Data (cada {number_of_days_to_show_data} dias)")
-plt.show()
+ListHelper.format_lists_from_all_covid_cases_list(covid_cases_filtered_by_country, list_of_dates, list_of_cases)
+
+inputManager.prompt_user_for_number_of_days()
+
+list_of_dates = ListHelper.get_cases_by_number_of_days(list_of_dates, inputManager.number_of_days)
+list_of_cases = ListHelper.get_cases_by_number_of_days(list_of_cases, inputManager.number_of_days)
+
+uiManager.create_plot_from_two_lists(list_of_cases, list_of_dates)
+uiManager.define_labels_for_both_axis("Total de casos confirmados (testes, confirmados, mortos)", f"Data (a cada {inputManager.number_of_days} dias)")
+uiManager.show_plot()
