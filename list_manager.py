@@ -1,15 +1,15 @@
 import covid_csv_index_constants
-class ListHelper:
+class ListManager:
     def __init__(self):
         pass
 
-    def format_lists_from_all_covid_cases_list(self, covid_cases_filtered_by_country: list, list_of_dates: list, list_of_cases: list, type_of_data: int):
+    def format_lists_from_all_covid_cases_list(self, covid_cases_filtered_by_country: list, list_of_dates: list, list_of_cases: list, type_of_covid_data: int):
         if (len(covid_cases_filtered_by_country) > 0):
             for row in covid_cases_filtered_by_country:
                 try:
                     # [5:] -> Substring to get only 'month-day' instead of the full date format
                     list_of_dates.append(row[covid_csv_index_constants.LIST_DATE_INDEX][5:])
-                    list_of_cases.append(row[type_of_data])
+                    list_of_cases.append(row[type_of_covid_data])
                 except Exception as exception_message:
                     print(f'Failed on converting the current row. Error: {str(exception_message)}')
                     pass
