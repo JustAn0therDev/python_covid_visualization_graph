@@ -20,5 +20,5 @@ list_of_dates = ListHelper.get_cases_by_interval_in_days(list_of_dates, inputMan
 list_of_cases = ListHelper.get_cases_by_interval_in_days(list_of_cases, inputManager.interval_in_days)
 
 uiManager.create_plot_from_two_lists(list_of_cases, list_of_dates)
-uiManager.define_labels_for_both_axis("Total de casos confirmados (testes, confirmados, mortos)", f"Data (a cada {inputManager.interval_in_days} dias)")
+uiManager.define_labels_for_both_axis("Total of confirmed cases (tested, treated and recovered, deaths)", f"Date (for every {inputManager.interval_in_days} days)")
 uiManager.show_plot()

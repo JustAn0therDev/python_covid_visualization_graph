@@ -12,6 +12,6 @@ class InputManager:
 
     def prompt_user_for_interval_in_days(self) -> None:
         try:
-            self.interval_in_days = int(input("Please input the number of days the reports of cases (only numbers): "))
+            self.interval_in_days = int(input("Please input the number of days the reports of cases (only numbers and more than 3 days is recommended): "))
         except:
             self.prompt_user_for_interval_in_days()

@@ -8,7 +8,7 @@ class ListHelper:
                     list_of_dates.append(row[2][5:])
                     list_of_cases.append(row[3])
                 except Exception as exception_message:
-                    print(f'Failed on converting the current row. Error: {exception_message}')
+                    print(f'Failed on converting the current row. Error: {str(exception_message)}')
                     pass
 
     @staticmethod
@@ -19,6 +19,8 @@ class ListHelper:
                 if row[0] == country_iso_code.upper():
                     filtered_list.append(row)
             return filtered_list
+        else:
+            return []
 
     @staticmethod
     def get_cases_by_interval_in_days(list_to_filter_from: list, interval_in_days: int) -> list:
@@ -33,3 +35,5 @@ class ListHelper:
                 else:
                     interval_counter = interval_counter + 1
             return filtered_list
+        else:
+            return []

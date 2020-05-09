@@ -8,13 +8,13 @@ class UiManager:
         pass
 
     def __one_of_the_lists_is_empty(self, list_one: list, list_two: list) -> bool:
-        if type(list_one) == None or type(list_two) == None:
+        if len(list_one) == 0 or len(list_two) == 0:
             return True
         return False
 
     def create_plot_from_two_lists(self, list_in_axis_x: list, list_in_axis_y: list) -> None:
         if (self.__one_of_the_lists_is_empty(list_in_axis_x, list_in_axis_y)):
-            plt.plot([], [], self.__DEFAULT_LINE_COLOR)
+            plt.plot()
         else:
             plt.plot(list_in_axis_y, list_in_axis_x, self.__DEFAULT_LINE_COLOR)
 
