@@ -1,6 +1,5 @@
 import covid_csv_index_constants
 class ListHelper:
-
     def __init__(self):
         pass
 

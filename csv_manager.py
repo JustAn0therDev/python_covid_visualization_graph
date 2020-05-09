@@ -1,7 +1,6 @@
 import csv
 
 class CsvManager:
-
     ALL_COVID_CASES_IN_CSV = []
 
     def __init__(self):

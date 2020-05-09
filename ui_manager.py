@@ -1,8 +1,7 @@
 import matplotlib.pyplot as plt
 
 class UiManager:
-
-    __DEFAULT_LINE_COLOR: str =  "#FF0000"
+    __DEFAULT_LINE_COLOR: str = "#FF0000"
 
     def __init__(self):
         pass
