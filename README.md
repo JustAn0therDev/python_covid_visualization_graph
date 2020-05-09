@@ -1,5 +1,5 @@
 # python_covid_visualization_graph
-A simple python project to visualize the growth in number of Brazil's COVID-19 total cases.
+A simple python project to visualize the growth in number of any country's COVID-19 total cases.
 
 ## Packages
 
