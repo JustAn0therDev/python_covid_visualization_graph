@@ -7,7 +7,7 @@ This project uses the matplotlib package, so remember to run the following comma
 `python -m pip install -U matplotlib`
 
 ## Notes
-This is a simple project created in twenty minutes (-ish) so I could visualize the growth of cases for the countries I wanted to check out.
+This is a simple project created in twenty minutes (-ish) so I could visualize the growth of cases for the countries I wanted to check out. I am still improving it as the days go by so if you notice a different behavior or new features, that might be why.
 
 The original CSV from where I got the data can be found [here](https://ourworldindata.org/coronavirus-source-data)
 
