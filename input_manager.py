@@ -1,4 +1,4 @@
-from covid_csv_index_descriptions import csv_index_descriptions
+from covid_csv_index_descriptions import CSV_INDEX_DESCRIPTIONS
 
 class InputManager:
     chosen_country_iso_code: str = ""
@@ -13,7 +13,7 @@ class InputManager:
 
     def prompt_user_for_type_of_data(self) -> None:
         try:
-            for index in csv_index_descriptions:
+            for index in CSV_INDEX_DESCRIPTIONS:
                 print(index)
             self.chosen_type_of_data = int(input("Please provide the type of data that will be shown in the graph (only numbers): "))
         except:

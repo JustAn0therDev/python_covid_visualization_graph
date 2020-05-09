@@ -2,13 +2,13 @@ from input_manager import InputManager
 from list_manager import ListManager
 from csv_manager import CsvManager
 from ui_manager import UiManager
-
-list_of_dates = []
-list_of_cases = []
 inputManager = InputManager()
 listManager = ListManager()
 csvManager = CsvManager()
 uiManager = UiManager()
+
+list_of_dates = []
+list_of_cases = []
 
 inputManager.prompt_user_for_country_iso_code()
 inputManager.prompt_user_for_type_of_data()

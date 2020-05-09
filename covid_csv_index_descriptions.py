@@ -1,6 +1,6 @@
 from covid_csv_index_constants import LIST_TOTALCASES_INDEX, LIST_TOTALTESTS_INDEX, LIST_TOTALDEATHS_INDEX, LIST_NEWCASES_INDEX
 
-csv_index_descriptions = [
+CSV_INDEX_DESCRIPTIONS = [
     f"Total cases - {LIST_TOTALCASES_INDEX}", 
     f"New cases - {LIST_NEWCASES_INDEX}",
     f"Total deaths - {LIST_TOTALDEATHS_INDEX}",
