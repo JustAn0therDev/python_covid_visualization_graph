@@ -23,3 +23,10 @@ class UiManager:
 
     def show_plot(self) -> None:
         plt.show()
+
+    def day_message_plural_check(self, number_of_days) -> str:
+        if (number_of_days == 1):
+            return f"for each day"
+        else:
+            return f"for every {number_of_days} days"
+            
