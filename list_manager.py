@@ -1,4 +1,5 @@
 import covid_csv_index_constants
+
 class ListManager:
     def __init__(self):
         pass
@@ -9,10 +10,10 @@ class ListManager:
             for row in list_of_covid_cases_to_filter:
                 if row[0] == country_iso_code:
                     filtered_list.append(row)
-            return filtered_list
+
         return filtered_list
 
-    def get_type_of_data_list(self, covid_cases_filtered_by_country: list, type_of_covid_data: int):
+    def get_type_of_data_list(self, covid_cases_filtered_by_country: list, type_of_covid_data: int) -> list:
         list_of_cases = []
         if (len(covid_cases_filtered_by_country) > 0):
             for row in covid_cases_filtered_by_country:
@@ -23,7 +24,7 @@ class ListManager:
                     pass
         return list_of_cases
 
-    def get_date_list(self, covid_cases_filtered_by_country: list):
+    def get_date_list(self, covid_cases_filtered_by_country: list) -> list:
         list_of_dates = []
         if (len(covid_cases_filtered_by_country) > 0):
             for row in covid_cases_filtered_by_country:
@@ -45,5 +46,4 @@ class ListManager:
                     filtered_list.append(row)
                 else:
                     interval_counter = interval_counter + 1
-            return filtered_list
         return filtered_list
